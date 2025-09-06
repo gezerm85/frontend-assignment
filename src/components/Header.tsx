@@ -17,7 +17,7 @@ function Header() {
             fontWeight: 'bold'
           }}
         >
-          📝 Davinci
+           Davinci
         </Typography>
         
         <Box sx={{ display: 'flex', gap: 1 }}>

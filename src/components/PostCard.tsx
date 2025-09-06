@@ -14,17 +14,17 @@ import { Favorite, Comment, Share } from '@mui/icons-material'
 function PostCard({ post, user }: { post: PostsType; user?: UserType }) {
   const getAvatarColor = (name: string) => {
     const colors = [
-      '#1976d2',
-      '#388e3c',
-      '#f57c00',
-      '#d32f2f',
-      '#7b1fa2',
-      '#00796b',
+      '#1976d2', 
+      '#388e3c', 
+      '#f57c00', 
+      '#d32f2f', 
+      '#7b1fa2', 
+      '#00796b', 
       '#5d4037',
-      '#455a64',
-      '#e91e63',
-      '#795548',
-      '#607d8b',
+      '#455a64', 
+      '#e91e63', 
+      '#795548', 
+      '#607d8b', 
       '#ff9800',
     ]
     const index = name.charCodeAt(0) % colors.length

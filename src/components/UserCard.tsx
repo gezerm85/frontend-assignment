@@ -11,6 +11,25 @@ import {
 import { Email, Phone, Language, Business } from '@mui/icons-material'
 
 function UserCard({ user, onClick }: { user: UserType, onClick: () => void }) {
+  const getAvatarColor = (name: string) => {
+    const colors = [
+      '#1976d2', 
+      '#388e3c', 
+      '#f57c00', 
+      '#d32f2f', 
+      '#7b1fa2', 
+      '#00796b', 
+      '#5d4037',
+      '#455a64', 
+      '#e91e63', 
+      '#795548', 
+      '#607d8b', 
+      '#ff9800', 
+    ]
+    const index = name.charCodeAt(0) % colors.length
+    return colors[index]
+  }
+
   return (
     <Card 
       sx={{ 
@@ -24,13 +43,12 @@ function UserCard({ user, onClick }: { user: UserType, onClick: () => void }) {
       onClick={onClick}
     >
       <CardContent sx={{ p: 3 }}>
-        {/* Avatar & Name */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
           <Avatar 
             sx={{ 
               width: 48, 
               height: 48,
-              bgcolor: 'primary.main',
+              bgcolor: getAvatarColor(user.name),
               fontSize: '1.2rem',
               fontWeight: 'bold'
             }}
@@ -47,7 +65,6 @@ function UserCard({ user, onClick }: { user: UserType, onClick: () => void }) {
           </Box>
         </Box>
         
-        {/* Contact Info */}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <Email fontSize="small" color="action" />
@@ -71,7 +88,6 @@ function UserCard({ user, onClick }: { user: UserType, onClick: () => void }) {
           )}
         </Box>
         
-        {/* Company Info */}
         {user.company?.name && (
           <>
             <Divider sx={{ my: 2 }} />

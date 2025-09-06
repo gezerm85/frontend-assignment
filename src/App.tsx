@@ -1,13 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react' 
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { store } from './store/store'
 import { useAppDispatch } from './store/hooks'
 import { fetchUsers } from './store/userSlice'
 import { fetchPosts } from './store/postSlice'
-import './App.css'
 import Home from './pages/Home'
 import Users from './pages/Users'
 import Posts from './pages/Posts'
@@ -29,6 +28,7 @@ const theme = createTheme({
 
 function AppContent() {
   const dispatch = useAppDispatch()
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     dispatch(fetchUsers())
@@ -37,11 +37,11 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/users" element={<Users searchTerm={searchTerm} />} />
+        <Route path="/posts" element={<Posts searchTerm={searchTerm} />} />
       </Routes>
     </div>
   )

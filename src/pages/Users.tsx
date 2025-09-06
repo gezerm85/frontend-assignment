@@ -24,9 +24,20 @@ import { Add, MoreVert, Edit, Delete } from '@mui/icons-material'
 
 const EMPTY_USER = { name: '', email: '', phone: '', website: '' }
 
-function Users() {
+interface UsersProps {
+  searchTerm: string
+}
+
+function Users({ searchTerm }: UsersProps) {
   const { users } = useAppSelector((state) => state.users)
   const dispatch = useAppDispatch()
+  
+  const filteredUsers = users.filter(user => 
+    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.phone.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.website.toLowerCase().includes(searchTerm.toLowerCase())
+  )
   
   const [selectedUser, setSelectedUser] = useState<UserType | null>(null)
   const [showForm, setShowForm] = useState(false)
@@ -110,7 +121,6 @@ function Users() {
 
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
-      {/* Header */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
         <Box>
           <Typography variant="h4" component="h1" gutterBottom>
@@ -130,7 +140,6 @@ function Users() {
         </Button>
       </Box>
       
-      {/* Users Grid */}
       <Box sx={{ 
         display: 'grid', 
         gridTemplateColumns: { 
@@ -141,11 +150,10 @@ function Users() {
         }, 
         gap: 3 
       }}>
-        {users.map((user) => (
+        {filteredUsers.map((user) => (
           <Box key={user.id} sx={{ position: 'relative' }}>
             <UserCard user={user} onClick={() => setSelectedUser(user)} />
             
-            {/* 3 Dots Menu */}
             <IconButton
               onClick={(e) => { 
                 e.stopPropagation(); 
@@ -164,7 +172,6 @@ function Users() {
               <MoreVert />
             </IconButton>
             
-            {/* Dropdown Menu */}
             <Menu
               anchorEl={activeDropdown === user.id ? anchorEl : null}
               open={activeDropdown === user.id}

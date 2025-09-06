@@ -21,7 +21,6 @@ function Home() {
           gap: 3,
         }}
       >
-        {/* Kullanıcılar */}
         <Card
           elevation={2}
           sx={{
@@ -55,7 +54,6 @@ function Home() {
           </CardContent>
         </Card>
 
-        {/* Postlar */}
         <Card
           elevation={2}
           sx={{

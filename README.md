@@ -16,29 +16,29 @@ Modern bir kullanıcı ve post yönetim uygulaması. Bu proje React ve TypeScrip
 - **React 19**: Kullanıcı arayüzü oluşturmak için seçildi. Component tabanlı yapısı ve güçlü ekosistemi sayesinde hızlı geliştirme imkanı sağlıyor.
 
 ### Type Safety
-- **TypeScript**: JavaScript'in üzerine tip güvenliği ekleyerek geliştirme sürecinde hataları önlemek ve kod kalitesini artırmak için kullanıldı.
+- **TypeScript**: JavaScript'in üzerine tip güvenliği ekleyerek geliştirme sürecinde hataları önlemek ve kod kalitesini artırmak için kullandım.
 
 ### State Management
 - **Redux Toolkit**: Uygulama state'ini merkezi olarak yönetmek için tercih edildi. Async işlemler için createAsyncThunk kullanılarak API çağrıları kolaylaştırıldı.
 
 ### UI Framework
-- **Material UI**: Google'ın Material Design prensiplerine dayalı component kütüphanesi. Tutarlı ve profesyonel görünüm sağlamak için seçildi.
+- **Material UI**: Google'ın Material Design prensiplerine dayalı component kütüphanesi. Tutarlı ve profesyonel görünüm sağlamak için seçtim.
 
 ### Styling
-- **Tailwind CSS**: Utility-first CSS framework. Hızlı ve tutarlı styling için kullanıldı.
-- **Emotion**: CSS-in-JS çözümü olarak Material UI ile uyumlu çalışması için kullanıldı.
+- **Tailwind CSS**: Utility-first CSS framework. Hızlı ve tutarlı styling için kullandım.
+- **Emotion**: CSS-in-JS çözümü olarak Material UI ile uyumlu çalışması için kullandım.
 
 ### Routing
 - **React Router DOM**: Sayfa geçişleri ve URL yönetimi için standart çözüm.
 
 ### HTTP Client
-- **Axios**: API istekleri için güvenilir ve konfigürasyonu kolay HTTP client.
+- **Axios**: API istekleri için tercih ettiğim, güvenilir ve konfigürasyonu oldukça kolay bir HTTP client.
 
 ### Build Tool
 - **Vite**: Hızlı geliştirme ortamı ve build süreci için modern bir araç. Webpack'e alternatif olarak daha hızlı hot reload sağlıyor.
 
 ### Code Quality
-- **ESLint**: Kod kalitesini korumak ve standartları uygulamak için kullanıldı.
+- **ESLint**: Kod kalitesini korumak ve standartları uygulamak için kullandım.
 
 ## Kurulum
 
